@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "flask-02-jinja-template"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
