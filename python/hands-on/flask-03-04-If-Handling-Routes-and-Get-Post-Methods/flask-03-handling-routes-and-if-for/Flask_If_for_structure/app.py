@@ -21,6 +21,7 @@ def header():
 # run this app in debug mode on your local.
 if __name__== "__main__":
     app.run(debug=True)
+    # if you have any bug, you should ckange port nnumber
     app.run(host='0.0.0.0', port=80)
     # we use it aim to run in ec2 port 80
 
