@@ -3,13 +3,11 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
-
 @app.route("/")
 def head():
     return render_template("index.html", number1=7000, number2=9000)
 
-@app.route("/serdar")
+@app.route("/sum")
 def number():
     num1 = 23
     num2 = 54
@@ -18,5 +16,5 @@ def number():
 
 
 if __name__== "__main__":
-    app.run(debug=True, port=2000)
+    app.run(debug=True, port=4000)
     # i use macos and default port 5000 is busy, so i use port 2000
