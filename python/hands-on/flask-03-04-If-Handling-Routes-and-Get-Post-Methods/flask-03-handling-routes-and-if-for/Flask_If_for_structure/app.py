@@ -22,4 +22,5 @@ def header():
 if __name__== "__main__":
     app.run(debug=True)
     app.run(host='0.0.0.0', port=80)
+    # we use it aim to run in ec2 port 80
 
