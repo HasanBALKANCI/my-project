@@ -16,6 +16,7 @@ def home():
 def greet():
     if 'user' in request.args: 
         myself = request.args['user']
+        # args is like a library in which hold data.
         return render_template('greet.html', user=myself)
     else:
         return render_template('greet.html', user='Send your user name with "user" param in query string')
@@ -41,4 +42,4 @@ def login():
 # Add a statement to run the Flask application which can be reached from any host on port 80.
 if __name__ == '__main__':
     app.run(debug=True)
-    app.run(host='0.0.0.0', port= 80)
+    # app.run(host='0.0.0.0', port= 80)
