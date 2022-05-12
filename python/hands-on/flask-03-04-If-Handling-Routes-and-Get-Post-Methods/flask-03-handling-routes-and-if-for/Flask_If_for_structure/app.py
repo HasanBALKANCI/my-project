@@ -1,5 +1,7 @@
 # Import Flask modules
 from flask import Flask, render_template
+# render template means that 
+# we use render_template iin this code for running some coding
 
 # Create an object named app 
 app = Flask(__name__)
