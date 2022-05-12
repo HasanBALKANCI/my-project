@@ -1,5 +1,6 @@
 # Import Flask modules
 from flask import Flask, request, render_template
+# request allows you to take some information from user. It is required GET
 
 # Create an object named app
 app = Flask(__name__)
