@@ -51,6 +51,7 @@ def greet(name):
 @app.route('/greet-admin')
 def greet_admin():
     return redirect(url_for('greet', name='Master Admin!!!!'))
+    # you see 302 in terminal when you use redirect. It means redirect.
 
 # Rewrite a function named greet which uses template file named `greet.html` under `templates` folder 
 # and assign to the dynamic route of ('/<name>')
