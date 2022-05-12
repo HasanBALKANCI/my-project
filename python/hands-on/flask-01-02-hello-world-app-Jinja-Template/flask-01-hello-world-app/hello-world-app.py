@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def head():
-    return "<h1>Hello World!</h1>"
+    return "<h1>Hello World from Flasak!</h1>"
 
 
 @app.route("/second")
