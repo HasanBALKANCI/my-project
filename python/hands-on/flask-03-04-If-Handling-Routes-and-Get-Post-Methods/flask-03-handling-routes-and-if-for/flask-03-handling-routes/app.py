@@ -1,4 +1,4 @@
-Import Flask modules
+# Import Flask modules
 from flask import Flask, redirect, url_for, render_template
 
 #Create an object named app 
@@ -72,5 +72,6 @@ def evens():
 
 # Add a statement to run the Flask application which can be reached from any host on port 80.
 if __name__=='__main__':
-   app.run(debug=True)
+   app.run(debug=True, port = 3000)
+   # if any problem about port is done you should change your port
    app.run(host='0.0.0.0', port=80)
