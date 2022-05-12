@@ -21,5 +21,6 @@ def forth(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=2000)
+    app.run(debug=True, port=2000) 
+    # if you don't write anything for port, it accept automatically 5000
     
