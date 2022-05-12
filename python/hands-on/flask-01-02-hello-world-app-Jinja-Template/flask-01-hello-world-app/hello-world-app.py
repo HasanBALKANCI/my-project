@@ -4,12 +4,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def head():
-    return "<h1>Hello World from Flasak!</h1>"
+    return "<h1>Hello World from Flask!</h1>"
 
 
 @app.route("/second")
 def second():
     return "This is my second page"
+    # You can see this localhost:2000/second
 
 @app.route("/third/subthird")
 def third():
