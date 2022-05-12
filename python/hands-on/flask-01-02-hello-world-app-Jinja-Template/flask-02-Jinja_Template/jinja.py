@@ -13,8 +13,6 @@ def number():
     num2 = 54
     return render_template("body.html", value1=num1, value2=num2, sum=num1+num2)
 
-
-
 if __name__== "__main__":
     app.run(debug=True, port=4000)
-    # i use macos and default port 5000 is busy, so i use port 2000
+    # i use macos and default port 5000 is busy, so i use port 4000
