@@ -10,11 +10,12 @@ Description: |
   anywhere. Kittens Carousel Static Website 
   is downloaded from my Public Github repository,
   then deployed on Apache Web Server.
+  
 Resources:
   WebServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Enable HTTP for Apache Web Server and SSH for secure connection # Required
+      GroupDescription: Enable HTTP for Apache Web Server and SSH for secure connection.
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
@@ -24,21 +25,21 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
+
   WebServerHost:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-0022f774911c1d690
       InstanceType: t2.micro
-      KeyName: firstkey
+      KeyName: vincenzo
       SecurityGroupIds:
-        - !Ref WebServerSecurityGroup # if you want to use any resourses which was defined before, you should use !Ref
+        - !Ref WebServerSecurityGroup
       Tags:
         - Key: Name
-          Value: !Sub Web Server of ${AWS::StackName} Stack # We dont have the Stack now. We will create it. So We should use !Sub
-      
-      UserData:
+          Value: !Sub Web Server of ${AWS::StackName} Stack
+      UserData: 
         Fn::Base64:
-          !Sub
+          !Sub |
             #! /bin/bash
             yum update -y
             yum install httpd -y
@@ -50,7 +51,8 @@ Resources:
             wget $FOLDER/cat2.jpg
             wget $FOLDER/cat3.png
             systemctl start httpd
-            systemctl enable httpd
+            systemctl enable httpd      
+
 Outputs:
   WebsiteURL:
     Value: !Sub
