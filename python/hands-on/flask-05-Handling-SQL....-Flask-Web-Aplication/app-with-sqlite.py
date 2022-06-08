@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # - configure required environmental variables for SQLite
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./email.db' # email.db will be created
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./email.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -18,14 +18,11 @@ email VARCHAR);
 data = """
 INSERT INTO users
 VALUES
-	VALUES
-    ("Yusuf", "yusuf@amazon.com"),
-    ("Betul", "betul@google.com"),
-    ("Sparkle", "sparkle@bmw.com"),
-    ("Yildiz", "yildiz@mercedes.com"),
-	("Mehmet", "mehmet@porche.com"),
-    ("Tugba", "tugba@tesla.com"),
-    ("Kemal", "kemal@samsung.com");
+	("Tuba", "tuba@amazon.com" ),
+	("Ethan", "ethan@micrasoft.com"),
+	("mostafa", "mostafa@facebook.com"),
+    ("sait", "sait@tesla.com"),
+    ("busra","busra@google");
 """
 
 
@@ -99,5 +96,4 @@ def add_email():
 
 # - Add a statement to run the Flask application which can be reached from any host on port 80.
 if __name__=='__main__':
-    # app.run(debug=True)
-    app.run(host='0.0.0.0', port=80)
+    app.run(debug=True)
