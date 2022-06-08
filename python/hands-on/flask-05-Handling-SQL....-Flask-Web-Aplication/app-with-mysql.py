@@ -6,10 +6,10 @@ from flaskext.mysql import MySQL
 app = Flask(__name__)
 
 # Configure mysql database
-app.config['MYSQL_DATABASE_HOST'] = 'hasan.cfngymbehzt1.us-east-1.rds.amazonaws.com'
-app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Clarusway_1'
-app.config['MYSQL_DATABASE_DB'] = 'clarusway'
+app.config['MYSQL_DATABASE_HOST'] = 'hasan.cfngymbehzt1.us-east-1.rds.amazonaws.com'# after creating end point, you need to add it 
+app.config['MYSQL_DATABASE_USER'] = 'admin' # it must be same in RDS's Credentials Master username.
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Clarusway_1' # it must be same in RDS's Master password.
+app.config['MYSQL_DATABASE_DB'] = 'clarusway' # it must be same RDS's Additional configuration/Database Option/initial database name.
 app.config['MYSQL_DATABASE_PORT'] = 3306
 mysql = MySQL()
 mysql.init_app(app)
