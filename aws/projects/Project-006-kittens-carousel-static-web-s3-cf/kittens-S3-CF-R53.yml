@@ -31,5 +31,13 @@ Resources:
             Principal: '*'
             Action: s3:GetObject
             Resource: !Join ['', ['arn:aws:s3:::', !Ref 'KittensBucket', /*]]  
-  
+   KittensCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      CertificateTransparencyLoggingPreference: ENABLED
+      DomainName: !Ref KittensDomainName
+      DomainValidationOptions:
+        - DomainName: !Ref KittensDomainName
+          HostedZoneId: !Ref DomainName
+      ValidationMethod: DNS
 Outputs:
