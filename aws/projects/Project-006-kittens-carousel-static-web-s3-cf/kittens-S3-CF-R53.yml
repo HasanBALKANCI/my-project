@@ -13,5 +13,12 @@ Parameters:
     AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
   
 Resources:
+  KittensBucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+      AccessControl: PublicRead
+      BucketName: !Ref KittensDomainName
+      WebsiteConfiguration: 
+        IndexDocument: index.html
   
 Outputs:
