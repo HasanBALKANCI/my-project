@@ -20,5 +20,16 @@ Resources:
       BucketName: !Ref KittensDomainName
       WebsiteConfiguration: 
         IndexDocument: index.html
+  KittensBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref KittensBucket
+      PolicyDocument:     
+        Statement:
+          - Sid: PublicReadforStaticWebsite
+            Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Join ['', ['arn:aws:s3:::', !Ref 'KittensBucket', /*]]  
   
 Outputs:
